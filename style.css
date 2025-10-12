@@ -26,7 +26,7 @@ header {
 }
 
 #logo {
-  width: 70px;
+  width: 60px; /* small logo size */
   border-radius: 50%;
 }
 
@@ -46,6 +46,14 @@ section {
   padding: 4rem 1.5rem;
   max-width: 900px;
   margin: auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 h1, h2 {
@@ -117,6 +125,18 @@ footer {
   font-size: 0.9rem;
 }
 
+/* ===== FLYING EMOJIS ===== */
+.emoji-fly {
+  position: absolute;
+  font-size: 2rem;
+  animation: fly 5s infinite;
+}
+@keyframes fly {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  50% { transform: translateY(-200px) translateX(100px); opacity: 1; }
+  100% { transform: translateY(-400px) translateX(-50px); opacity: 0; }
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
   nav {
@@ -129,3 +149,5 @@ footer {
     margin-bottom: 1rem;
   }
 }
+
+/* ===== SCROLL FADE-IN SCRIPT ===== */
