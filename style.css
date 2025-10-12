@@ -1,4 +1,4 @@
-/* ===== GLOBAL STYLES ===== */
+/* ===== GLOBAL ===== */
 * {
   margin: 0;
   padding: 0;
@@ -10,19 +10,22 @@ body {
   background-color: #0b2916;
   color: #eae7d9;
   line-height: 1.7;
+  scroll-behavior: smooth;
 }
 
 /* ===== HEADER ===== */
 header {
   background: #143d26;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-header img {
+#logo {
   width: 70px;
   border-radius: 50%;
 }
@@ -30,19 +33,18 @@ header img {
 nav a {
   color: #f5f2e6;
   text-decoration: none;
-  margin: 0.5rem 1rem;
+  margin: 0 1rem;
   font-weight: 500;
   transition: color 0.3s;
 }
-
 nav a:hover {
   color: #b7f5c5;
 }
 
-/* ===== SECTION STYLES ===== */
+/* ===== SECTIONS ===== */
 section {
-  padding: 3rem 1.5rem;
-  max-width: 1000px;
+  padding: 4rem 1.5rem;
+  max-width: 900px;
   margin: auto;
 }
 
@@ -52,13 +54,18 @@ h1, h2 {
   margin-bottom: 1rem;
 }
 
+h2.handwritten, h1.handwritten {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+}
+
 p {
   text-align: justify;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
 
-/* ===== BUTTON LINKS ===== */
+/* ===== BUTTONS ===== */
 .btn {
   display: inline-block;
   background: #1b5132;
@@ -67,24 +74,37 @@ p {
   border-radius: 25px;
   text-decoration: none;
   margin: 0.5rem;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 .btn:hover {
   background: #2a6d46;
+  transform: scale(1.05);
 }
 
-/* ===== GALLERY LINKS ===== */
-.gallery a {
-  display: block;
-  background: #12381f;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 10px;
-  color: #bffcc9;
-  text-decoration: none;
+/* ===== QUOTES GRID ===== */
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
 }
-.gallery a:hover {
+.quote-box {
+  background: #12381f;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  color: #bffcc9;
+  font-style: italic;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+.quote-box:hover {
+  transform: translateY(-5px);
   background: #1e5a34;
+}
+
+/* ===== CENTER DIVS ===== */
+.center {
+  text-align: center;
 }
 
 /* ===== FOOTER ===== */
@@ -103,8 +123,9 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.5rem;
   }
-  header img {
-    margin: 0 auto 1rem;
+  #logo {
+    margin-bottom: 1rem;
   }
 }
