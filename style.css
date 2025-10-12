@@ -199,5 +199,49 @@ footer {
     height: 60px;
     margin-left: -30px;
     margin-top: -30px;
+ /* ===== VOLUNTEER TITLE CONTAINER ===== */
+.volunteer-title-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Orbit container */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform-origin: center center;
+}
+
+/* Orbit sizes and animations */
+.orbit1 { width: 80px; height: 80px; animation: rotateOrbit 8s linear infinite; }
+.orbit2 { width: 100px; height: 100px; animation: rotateOrbit 12s linear infinite reverse; }
+.orbit3 { width: 120px; height: 120px; animation: rotateOrbit 16s linear infinite; }
+.orbit4 { width: 140px; height: 140px; animation: rotateOrbit 20s linear infinite reverse; }
+
+.orbit span.planet {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+}
+
+/* Orbit Animation */
+@keyframes rotateOrbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 600px) {
+  .orbit1, .orbit2, .orbit3, .orbit4 {
+    width: 60px; height: 60px; /* scale down orbit for mobile */
   }
+  .orbit2 { width: 80px; height: 80px; }
+  .orbit3 { width: 100px; height: 100px; }
+  .orbit4 { width: 120px; height: 120px; }
+}
+ }
 }
