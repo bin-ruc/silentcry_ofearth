@@ -11,6 +11,7 @@ body {
   color: #eae7d9;
   line-height: 1.7;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 /* ===== HEADER ===== */
@@ -137,6 +138,51 @@ footer {
   100% { transform: translateY(-400px) translateX(-50px); opacity: 0; }
 }
 
+/* ===== VOLUNTEER SECTION FLOATING EMOJIS ===== */
+.volunteer-emoji {
+  position: absolute;
+  animation: flyVol 6s infinite;
+  opacity: 0;
+}
+
+@keyframes flyVol {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  30% { opacity: 1; }
+  50% { transform: translateY(-150px) translateX(50px); opacity: 1; }
+  100% { transform: translateY(-300px) translateX(-30px); opacity: 0; }
+}
+
+/* ===== ROTATING EARTH AROUND VOLUNTEER TITLE ===== */
+.volunteer-title-container {
+  position: relative;
+  display: inline-block;
+}
+
+.earth-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;       /* radius of the orbit */
+  height: 80px;
+  margin-left: -40px; /* half width to center */
+  margin-top: -40px;  /* half height to center */
+  border-radius: 50%;
+  animation: rotateOrbit 8s linear infinite;
+}
+
+.earth-orbit .earth {
+  position: absolute;
+  top: -10px;  /* starting point */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+}
+
+@keyframes rotateOrbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
   nav {
@@ -147,5 +193,11 @@ footer {
   }
   #logo {
     margin-bottom: 1rem;
+  }
+  .earth-orbit {
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
   }
 }
