@@ -11,7 +11,6 @@ body {
   color: #eae7d9;
   line-height: 1.7;
   scroll-behavior: smooth;
-  position: relative;
 }
 
 /* ===== HEADER ===== */
@@ -97,11 +96,56 @@ p {
   gap: 1rem;
   margin-top: 2rem;
 }
-
 .quote-box {
   background: #12381f;
   padding: 1rem 1.5rem;
   border-radius: 15px;
   color: #bffcc9;
-  font
+  font-style: italic;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+.quote-box:hover {
+  transform: translateY(-5px);
+  background: #1e5a34;
+}
 
+/* ===== CENTER DIVS ===== */
+.center {
+  text-align: center;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  background-color: #143d26;
+  padding: 2rem 1rem;
+  color: #a5c9a7;
+  border-top: 2px solid #1b5132;
+  font-size: 0.9rem;
+}
+
+/* ===== FLYING EMOJIS ===== */
+.emoji-fly {
+  position: absolute;
+  font-size: 2rem;
+  animation: fly 5s infinite;
+}
+@keyframes fly {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  50% { transform: translateY(-200px) translateX(100px); opacity: 1; }
+  100% { transform: translateY(-400px) translateX(-50px); opacity: 0; }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  #logo {
+    margin-bottom: 1rem;
+  }
+}
